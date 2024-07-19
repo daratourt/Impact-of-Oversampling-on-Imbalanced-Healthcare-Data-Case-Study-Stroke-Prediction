@@ -1,18 +1,5 @@
 # Evaluating the Impact of Oversampling Techniques on Imbalanced Healthcare Data: A Case Study on Stroke Prediction
 
-# Impact of Oversampling on Imbalanced Healthcare Data: A Case Study on Stroke Prediction
-
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Dataset](#dataset)
-3. [Problem Definition](#problem-definition)
-4. [Methods](#methods)
-5. [Results](#results)
-6. [Conclusion](#conclusion)
-7. [Usage](#usage)
-8. [Installation](#installation)
-9. [License](#license)
-
 ## Introduction
 In healthcare, predictive models can significantly improve patient outcomes by enabling early intervention and personalized treatment plans. However, many healthcare datasets, such as those predicting stroke occurrences, suffer from class imbalance. This study evaluates the effectiveness of various oversampling techniques on an imbalanced healthcare dataset related to stroke prediction.
 
