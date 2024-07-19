@@ -39,7 +39,6 @@ Many healthcare datasets are imbalanced, leading to biased models that perform p
    - **KMeansSMOTE:** Combines K-means clustering and SMOTE to generate synthetic samples based on cluster centroids.
    - **SMOTEENN:** A combination of SMOTE and Edited Nearest Neighbors (ENN) that first generates synthetic samples using SMOTE and then cleans the dataset using ENN.
    - **SMOTETomek:** Combines SMOTE and Tomek Links to generate synthetic samples and then remove noisy samples.
-
 4. **Model Training:** Training models on both the original and oversampled datasets.
 5. **Evaluation:** Comparing model performance using accuracy, precision, recall, F1-score, and AUC-ROC.
 
@@ -48,4 +47,3 @@ The results section will detail the performance of models on both the imbalanced
 
 ## Conclusion
 This study provides insights into the effectiveness of various oversampling techniques in improving predictive model performance on imbalanced healthcare datasets. Recommendations for handling class imbalance in similar datasets will be provided.
-
