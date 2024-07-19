@@ -57,7 +57,7 @@ The following machine learning models were used in this study:
 11. **Extra Trees:** An ensemble learning method similar to Random Forests but with more randomization during tree building.
 
 ## Evaluation Metrics
-The following evaluation metrics used in this study:
+The following evaluation metrics were used in this study:
 - **Accuracy:** This metric can be misleading in imbalanced datasets because a model that predicts the majority class for all instances will still have high accuracy.
 - **Precision and Recall:** These metrics are crucial for the minority class. Low values indicate that the model is not effectively identifying instances of the minority class.
 - **F1-Score:** This metric combines precision and recall for the minority class. A low F1-score indicates poor performance in identifying the minority class.
