@@ -42,6 +42,21 @@ Many healthcare datasets are imbalanced, leading to biased models that perform p
 4. **Model Training:** Training models on both the original and oversampled datasets.
 5. **Evaluation:** Comparing model performance using accuracy, precision, recall, F1-score, and AUC-ROC.
 
+## Models
+The following machine learning models were used in this study:
+1. **Logistic Regression:** A linear model for binary classification that estimates probabilities using the logistic function.
+2. **Random Forest:** An ensemble learning method that uses multiple decision trees to improve model accuracy and control overfitting.
+3. **Support Vector Machine (SVM):** A powerful classifier that finds the hyperplane that best separates the classes, with support for probability estimates.
+4. **Gradient Boosting:** An ensemble technique that builds models sequentially to correct the errors of previous models.
+5. **AdaBoost:** An ensemble method that combines multiple weak classifiers to form a strong classifier, focusing on harder-to-classify instances.
+6. **k-Nearest Neighbors (k-NN):** A simple, instance-based learning algorithm that classifies instances based on the majority class of their k-nearest neighbors.
+7. **Decision Tree:** A non-parametric model that splits data into subsets based on feature values, forming a tree-like structure.
+8. **Naive Bayes:** A probabilistic classifier based on Bayes' theorem, assuming independence between features.
+9. **Neural Network:** A deep learning model that can capture complex patterns in the data, configured with multiple layers and nodes.
+10. **Linear Discriminant Analysis:** A linear classifier that finds a linear combination of features that best separates the classes.
+11. **Quadratic Discriminant Analysis:** An extension of LDA that models quadratic decision boundaries.
+12. **Extra Trees:** An ensemble learning method similar to Random Forests but with more randomization during tree building.
+
 ## Results
 The results section will detail the performance of models on both the imbalanced and oversampled datasets, highlighting the improvements achieved through oversampling.
 
