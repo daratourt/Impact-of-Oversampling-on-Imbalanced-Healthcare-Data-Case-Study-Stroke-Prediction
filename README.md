@@ -57,7 +57,25 @@ The following machine learning models were used in this study:
 11. **Extra Trees:** An ensemble learning method similar to Random Forests but with more randomization during tree building.
 
 ## Results
-The results section will detail the performance of models on both the imbalanced and oversampled datasets, highlighting the improvements achieved through oversampling.
+The results section will detail the performance of models on both the imbalanced and oversampled datasets.
+### Performance on Imbalanced Data
+The table below summarizes the performance of various machine learning models when trained on the imbalanced stroke dataset:
+
+| Model                        | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-score (0) | F1-score (1) | ROC AUC Score | Confusion Matrix      |
+|------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|----------------|-----------------------|
+| Logistic Regression          | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.851          | [[960, 0], [62, 0]]   |
+| Random Forest                | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.797          | [[960, 0], [62, 0]]   |
+| Support Vector Machine       | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.628          | [[960, 0], [62, 0]]   |
+| Gradient Boosting            | 0.938    | 0.94          | 0.33          | 1.00       | 0.02       | 0.97         | 0.03         | 0.835          | [[958, 2], [61, 1]]   |
+| AdaBoost                     | 0.937    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.793          | [[958, 2], [62, 0]]   |
+| k-Nearest Neighbors          | 0.939    | 0.94          | 0.00          | 1.00       | 0.00       | 0.97         | 0.00         | 0.647          | [[960, 0], [62, 0]]   |
+| Decision Tree                | 0.920    | 0.95          | 0.27          | 0.97       | 0.19       | 0.96         | 0.23         | 0.580          | [[928, 32], [50, 12]] |
+| Naive Bayes                  | 0.867    | 0.96          | 0.22          | 0.89       | 0.47       | 0.93         | 0.30         | 0.829          | [[857, 103], [33, 29]]|
+| Linear Discriminant Analysis | 0.934    | 0.94          | 0.27          | 0.99       | 0.05       | 0.97         | 0.08         | 0.842          | [[952, 8], [59, 3]]   |
+| Quadratic Discriminant Analysis | 0.880 | 0.96          | 0.24          | 0.91       | 0.45       | 0.93         | 0.31         | 0.830          | [[871, 89], [34, 28]] |
+| Extra Trees                  | 0.935    | 0.94          | 0.17          | 0.99       | 0.02       | 0.97         | 0.03         | 0.771          | [[955, 5], [61, 1]]   |
+
+
 
 ## Conclusion
 This study provides insights into the effectiveness of various oversampling techniques in improving predictive model performance on imbalanced healthcare datasets. Recommendations for handling class imbalance in similar datasets will be provided.
