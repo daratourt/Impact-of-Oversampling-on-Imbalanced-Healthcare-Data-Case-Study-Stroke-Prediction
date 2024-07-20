@@ -57,18 +57,10 @@ The following machine learning models were used in this study:
 
 ## Evaluation Metrics
 The following evaluation metrics were used in this study:
-- **Accuracy:** The ratio of correctly predicted instances to the total instances.
-   - **Formula:** \( \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}} \)
-   - Measures the overall correctness of the model. However, it can be misleading in imbalanced datasets, as it might reflect high values even if the model fails to predict the minority class correctly.
-- **Precision:** The ratio of correctly predicted positive instances to the total predicted positives.
-   - **Formula:** \( \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} \)
-   - Indicates the accuracy of the positive predictions made by the model. High precision means that there are fewer false positives.
-- **Recall (Sensitivity or True Positive Rate):** The ratio of correctly predicted positive instances to all actual positives.
-   - **Formula:** \( \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} \)
-   - Measures the model's ability to identify all relevant instances. High recall means that there are fewer false negatives.
-- **F1-Score:** The harmonic mean of precision and recall.
-   - **Formula:** \( \text{F1-Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \)
-   - Provides a single metric that balances both precision and recall. It is particularly useful when the class distribution is imbalanced.
+- **Accuracy:** The ratio of correctly predicted instances to the total instances. Measures the overall correctness of the model. However, it can be misleading in imbalanced datasets, as it might reflect high values even if the model fails to predict the minority class correctly.
+- **Precision:** The ratio of correctly predicted positive instances to the total predicted positives. Indicates the accuracy of the positive predictions made by the model. High precision means that there are fewer false positives.
+- **Recall (Sensitivity or True Positive Rate):** The ratio of correctly predicted positive instances to all actual positives. Measures the model's ability to identify all relevant instances. High recall means that there are fewer false negatives.
+- **F1-Score:** The harmonic mean of precision and recall. Provides a single metric that balances both precision and recall. It is particularly useful when the class distribution is imbalanced.
 - **ROC AUC Score:** The area under the Receiver Operating Characteristic (ROC) curve.
    - The ROC curve plots the true positive rate (recall) against the false positive rate (1 - specificity). The AUC score indicates how well the model distinguishes between the classes. A score of 1 indicates perfect discrimination, while a score of 0.5 indicates no discrimination (random guessing).
 
