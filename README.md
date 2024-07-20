@@ -114,7 +114,35 @@ Naive Bayes shows improved recall for the minority class with moderate precision
 Therefore, Random Over-Sampling generally improves recall for the minority class across most models, but precision remains low, indicating a high number of false positives. The ROC AUC score improves for most models, indicating better discrimination between classes. Models like Gradient Boosting and Logistic Regression show balanced improvements with Random Over-Sampling.
 
 #### SMOTE
+| Model                            | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-Score (0) | F1-Score (1) | ROC AUC Score |
+|----------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression              | 0.759    | 0.98          | 0.17          | 0.76       | 0.76       | 0.86         | 0.28         | 0.849         |
+| Random Forest                    | 0.917    | 0.94          | 0.19          | 0.97       | 0.11       | 0.96         | 0.14         | 0.805         |
+| Support Vector Machine           | 0.777    | 0.96          | 0.14          | 0.79       | 0.52       | 0.87         | 0.22         | 0.764         |
+| Gradient Boosting                | 0.875    | 0.96          | 0.21          | 0.91       | 0.39       | 0.93         | 0.27         | 0.820         |
+| AdaBoost                         | 0.822    | 0.97          | 0.18          | 0.84       | 0.55       | 0.90         | 0.27         | 0.812         |
+| k-Nearest Neighbors              | 0.829    | 0.96          | 0.16          | 0.86       | 0.42       | 0.90         | 0.23         | 0.686         |
+| Decision Tree                    | 0.869    | 0.95          | 0.15          | 0.91       | 0.26       | 0.93         | 0.19         | 0.583         |
+| Naive Bayes                      | 0.727    | 0.98          | 0.15          | 0.73       | 0.74       | 0.83         | 0.25         | 0.830         |
+| Linear Discriminant Analysis     | 0.743    | 0.98          | 0.16          | 0.74       | 0.76       | 0.84         | 0.26         | 0.848         |
+| Quadratic Discriminant Analysis  | 0.747    | 0.98          | 0.17          | 0.74       | 0.82       | 0.85         | 0.28         | 0.839         |
+| Extra Trees                      | 0.912    | 0.94          | 0.15          | 0.96       | 0.10       | 0.95         | 0.12         | 0.784         |
 
+Logistic Regression shows a significant improvement in recall for the minority class (stroke), indicating that SMOTE helps in identifying more stroke cases. However, precision is still low, suggesting many false positives.
+
+Random Forest maintains high accuracy but struggles with recall and precision for the minority class, indicating that it is still not very effective at identifying stroke cases despite oversampling.
+
+The SVM model benefits from SMOTE by significantly improving recall for the minority class. However, like Logistic Regression, it also suffers from low precision, leading to false positives.
+
+Gradient Boosting shows a balanced improvement in both recall and precision, making it more effective at identifying stroke cases with fewer false positives compared to Logistic Regression and SVM. AdaBoost shows similar trends to Gradient Boosting, with improved recall and moderate precision, indicating a balanced identification of stroke cases.
+
+k-NN shows a reasonable improvement in recall but has a relatively low precision, suggesting it is more prone to false positives. Decision Tree shows moderate improvements in recall and precision but still struggles to balance between false positives and true positives effectively.
+
+Naive Bayes benefits significantly from SMOTE, showing high recall for the minority class, although precision remains low, resulting in many false positives. LDA shows improved recall similar to Logistic Regression but suffers from low precision, indicating many false positives.
+
+QDA benefits from SMOTE with the highest recall among the models, but its precision is still low, resulting in a significant number of false positives. Extra Trees maintain high accuracy but have poor recall and precision for the minority class, indicating limited effectiveness in identifying stroke cases despite oversampling.
+
+Overall, applying SMOTE improves the recall of most models for the minority class (stroke), meaning that the models are better at identifying stroke cases. However, precision generally remains low across the models, indicating a high number of false positives. This trade-off is common in dealing with imbalanced datasets. Gradient Boosting, AdaBoost, and Logistic Regression seem to provide a more balanced improvement in both recall and precision, making them potentially better choices for this particular problem. 
 
 ## Conclusion
 This study provides insights into the effectiveness of various oversampling techniques in improving predictive model performance on imbalanced healthcare datasets. Recommendations for handling class imbalance in similar datasets will be provided.
