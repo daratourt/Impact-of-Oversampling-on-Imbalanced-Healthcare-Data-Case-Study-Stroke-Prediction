@@ -57,17 +57,25 @@ The following machine learning models were used in this study:
 
 ## Evaluation Metrics
 The following evaluation metrics were used in this study:
-- **Accuracy:** This metric can be misleading in imbalanced datasets because a model that predicts the majority class for all instances will still have high accuracy.
-- **Precision and Recall:** These metrics are crucial for the minority class. Low values indicate that the model is not effectively identifying instances of the minority class.
-- **F1-Score:** This metric combines precision and recall for the minority class. A low F1-score indicates poor performance in identifying the minority class.
-- **ROC AUC Score:** This metric provides a single measure of performance across all classification thresholds. A higher score indicates better discriminatory power.
-- **Confusion Matrix:** This matrix provides a detailed breakdown of the model's predictions, showing the number of true positives, true negatives, false positives, and false negatives.
+- **Accuracy:** The ratio of correctly predicted instances to the total instances.
+   - **Formula:** \( \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}} \)
+   - Measures the overall correctness of the model. However, it can be misleading in imbalanced datasets, as it might reflect high values even if the model fails to predict the minority class correctly.
+- **Precision:** The ratio of correctly predicted positive instances to the total predicted positives.
+   - **Formula:** \( \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} \)
+   - Indicates the accuracy of the positive predictions made by the model. High precision means that there are fewer false positives.
+- **Recall (Sensitivity or True Positive Rate):** The ratio of correctly predicted positive instances to all actual positives.
+   - **Formula:** \( \text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} \)
+   - Measures the model's ability to identify all relevant instances. High recall means that there are fewer false negatives.
+- **F1-Score:** The harmonic mean of precision and recall.
+   - **Formula:** \( \text{F1-Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \)
+   - Provides a single metric that balances both precision and recall. It is particularly useful when the class distribution is imbalanced.
+- **ROC AUC Score:** The area under the Receiver Operating Characteristic (ROC) curve.
+   - The ROC curve plots the true positive rate (recall) against the false positive rate (1 - specificity). The AUC score indicates how well the model distinguishes between the classes. A score of 1 indicates perfect discrimination, while a score of 0.5 indicates no discrimination (random guessing).
 
 ## Results
 The results section will detail the performance of models on both the imbalanced and oversampled datasets.
 ### Performance on Imbalanced Data
 The table below summarizes the performance of various machine learning models when trained on the imbalanced stroke dataset:
-
 
 | Model                        | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-score (0) | F1-score (1) | ROC AUC Score |
 |------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|----------------|
@@ -173,7 +181,19 @@ QDA benefits from ADASYN with the highest recall among the models, but its preci
 Overall, applying ADASYN improves the recall of most models for the minority class (stroke), meaning that the models are better at identifying stroke cases. However, precision generally remains low across the models, indicating a high number of false positives. This trade-off is common in dealing with imbalanced datasets. Gradient Boosting, AdaBoost, and Logistic Regression seem to provide a more balanced improvement in both recall and precision, making them potentially better choices for this particular problem. 
 
 #### Borderline-SMOTE
-
+| Model                            | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-Score (0) | F1-Score (1) | ROC AUC Score |
+|----------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression              | 0.798    | 0.98          | 0.19          | 0.80       | 0.73       | 0.88         | 0.30         | 0.854         |
+| Random Forest                    | 0.920    | 0.95          | 0.22          | 0.97       | 0.13       | 0.96         | 0.16         | 0.811         |
+| Support Vector Machine           | 0.835    | 0.96          | 0.18          | 0.86       | 0.50       | 0.91         | 0.27         | 0.794         |
+| Gradient Boosting                | 0.860    | 0.95          | 0.17          | 0.89       | 0.32       | 0.92         | 0.22         | 0.830         |
+| AdaBoost                         | 0.841    | 0.97          | 0.20          | 0.86       | 0.55       | 0.91         | 0.29         | 0.829         |
+| k-Nearest Neighbors              | 0.857    | 0.96          | 0.18          | 0.89       | 0.37       | 0.92         | 0.24         | 0.690         |
+| Decision Tree                    | 0.886    | 0.95          | 0.21          | 0.92       | 0.32       | 0.94         | 0.26         | 0.623         |
+| Naive Bayes                      | 0.767    | 0.98          | 0.17          | 0.77       | 0.71       | 0.86         | 0.27         | 0.836         |
+| Linear Discriminant Analysis     | 0.767    | 0.98          | 0.17          | 0.77       | 0.74       | 0.86         | 0.28         | 0.851         |
+| Quadratic Discriminant Analysis  | 0.784    | 0.98          | 0.18          | 0.79       | 0.73       | 0.87         | 0.29         | 0.845         |
+| Extra Trees                      | 0.919    | 0.94          | 0.18          | 0.97       | 0.10       | 0.96         | 0.13         | 0.785         |
 
 #### SVMSMOTE
 
