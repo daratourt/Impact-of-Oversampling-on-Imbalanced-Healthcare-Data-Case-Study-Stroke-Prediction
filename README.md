@@ -36,7 +36,6 @@ Many healthcare datasets are imbalanced, leading to biased models that perform p
    - **ADASYN (Adaptive Synthetic Sampling):** Similar to SMOTE, but adaptively focuses on harder-to-learn examples by generating more synthetic data points in regions where the model struggles.
    - **Borderline-SMOTE:** An extension of SMOTE that focuses on generating synthetic data points near the borderline of the minority and majority classes.
    - **SVMSMOTE:** Uses support vector machines (SVM) to create synthetic instances that are close to the decision boundary.
-   - **KMeansSMOTE:** Combines K-means clustering and SMOTE to generate synthetic samples based on cluster centroids.
    - **SMOTEENN:** A combination of SMOTE and Edited Nearest Neighbors (ENN) that first generates synthetic samples using SMOTE and then cleans the dataset using ENN.
    - **SMOTETomek:** Combines SMOTE and Tomek Links to generate synthetic samples and then remove noisy samples.
 4. **Model Training:** Training models on both the original and oversampled datasets.
@@ -159,6 +158,30 @@ Overall, applying SMOTE improves the recall of most models for the minority clas
 | Quadratic Discriminant Analysis  | 0.735    | 0.98          | 0.16          | 0.73       | 0.82       | 0.84         | 0.27         | 0.838         |
 | Extra Trees                      | 0.914    | 0.94          | 0.14          | 0.97       | 0.08       | 0.95         | 0.10         | 0.787         |
 
+Logistic Regression shows a significant improvement in recall for the minority class (stroke), indicating that ADASYN helps in identifying more stroke cases. However, precision is still low, suggesting many false positives.
+
+Random Forest maintains high accuracy but struggles with recall and precision for the minority class, indicating that it is still not very effective at identifying stroke cases despite oversampling. The SVM model benefits from ADASYN by significantly improving recall for the minority class. However, like Logistic Regression, it also suffers from low precision, leading to false positives.
+
+Gradient Boosting shows a balanced improvement in both recall and precision, making it more effective at identifying stroke cases with fewer false positives compared to Logistic Regression and SVM. AdaBoost shows similar trends to Gradient Boosting, with improved recall and moderate precision, indicating a balanced identification of stroke cases.
+
+k-NN shows a reasonable improvement in recall but has a relatively low precision, suggesting it is more prone to false positives. Decision Tree shows moderate improvements in recall and precision but still struggles to balance between false positives and true positives effectively.
+
+Naive Bayes benefits significantly from ADASYN, showing high recall for the minority class, although precision remains low, resulting in many false positives.LDA shows improved recall similar to Logistic Regression but suffers from low precision, indicating many false positives.
+
+QDA benefits from ADASYN with the highest recall among the models, but its precision is still low, resulting in a significant number of false positives. Extra Trees maintain high accuracy but have poor recall and precision for the minority class, indicating limited effectiveness in identifying stroke cases despite oversampling.
+
+Overall, applying ADASYN improves the recall of most models for the minority class (stroke), meaning that the models are better at identifying stroke cases. However, precision generally remains low across the models, indicating a high number of false positives. This trade-off is common in dealing with imbalanced datasets. Gradient Boosting, AdaBoost, and Logistic Regression seem to provide a more balanced improvement in both recall and precision, making them potentially better choices for this particular problem. 
+
+#### Borderline-SMOTE
+
+
+#### SVMSMOTE
+
+
+#### SMOTEENN
+
+
+#### SMOTETomek
 
 ## Conclusion
 This study provides insights into the effectiveness of various oversampling techniques in improving predictive model performance on imbalanced healthcare datasets. Recommendations for handling class imbalance in similar datasets will be provided.
