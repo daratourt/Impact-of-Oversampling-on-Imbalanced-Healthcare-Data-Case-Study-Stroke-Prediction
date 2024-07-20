@@ -86,7 +86,7 @@ The table below summarizes the performance of various machine learning models wh
 The evaluations demonstrate that most models struggled to detect stroke cases in an imbalanced dataset. High accuracy did not translate to effective stroke detection, as the minority class (stroke cases) was often missed. The ROC AUC scores indicated that while models could distinguish between classes overall, they were biased towards the majority class.
 ### Performce on oversampled datasets
 Below are the results of each oversampling technique:
-### Random Over-Sampling
+#### Random Over-Sampling
 
 
 ## Conclusion
