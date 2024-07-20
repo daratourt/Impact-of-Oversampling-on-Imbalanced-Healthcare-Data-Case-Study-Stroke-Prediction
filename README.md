@@ -145,6 +145,19 @@ QDA benefits from SMOTE with the highest recall among the models, but its precis
 Overall, applying SMOTE improves the recall of most models for the minority class (stroke), meaning that the models are better at identifying stroke cases. However, precision generally remains low across the models, indicating a high number of false positives. This trade-off is common in dealing with imbalanced datasets. Gradient Boosting, AdaBoost, and Logistic Regression seem to provide a more balanced improvement in both recall and precision, making them potentially better choices for this particular problem. 
 
 #### ADASYN
+| Model                            | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-Score (0) | F1-Score (1) | ROC AUC Score |
+|----------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression              | 0.756    | 0.98          | 0.17          | 0.76       | 0.76       | 0.85         | 0.27         | 0.849         |
+| Random Forest                    | 0.916    | 0.94          | 0.17          | 0.97       | 0.10       | 0.96         | 0.12         | 0.804         |
+| Support Vector Machine           | 0.776    | 0.96          | 0.14          | 0.79       | 0.52       | 0.87         | 0.22         | 0.763         |
+| Gradient Boosting                | 0.870    | 0.96          | 0.19          | 0.90       | 0.35       | 0.93         | 0.25         | 0.818         |
+| AdaBoost                         | 0.827    | 0.97          | 0.19          | 0.84       | 0.56       | 0.90         | 0.28         | 0.816         |
+| k-Nearest Neighbors              | 0.817    | 0.96          | 0.14          | 0.84       | 0.40       | 0.90         | 0.21         | 0.678         |
+| Decision Tree                    | 0.853    | 0.95          | 0.11          | 0.89       | 0.21       | 0.92         | 0.15         | 0.552         |
+| Naive Bayes                      | 0.711    | 0.98          | 0.14          | 0.71       | 0.76       | 0.82         | 0.24         | 0.828         |
+| Linear Discriminant Analysis     | 0.738    | 0.98          | 0.16          | 0.74       | 0.76       | 0.84         | 0.26         | 0.847         |
+| Quadratic Discriminant Analysis  | 0.735    | 0.98          | 0.16          | 0.73       | 0.82       | 0.84         | 0.27         | 0.838         |
+| Extra Trees                      | 0.914    | 0.94          | 0.14          | 0.97       | 0.08       | 0.95         | 0.10         | 0.787         |
 
 
 ## Conclusion
