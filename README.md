@@ -84,6 +84,10 @@ The table below summarizes the performance of various machine learning models wh
 | Quadratic Discriminant Analysis | 0.880 | 0.96          | 0.24          | 0.91       | 0.45       | 0.93         | 0.31         | 0.830          |
 
 The evaluations demonstrate that most models struggled to detect stroke cases in an imbalanced dataset. High accuracy did not translate to effective stroke detection, as the minority class (stroke cases) was often missed. The ROC AUC scores indicated that while models could distinguish between classes overall, they were biased towards the majority class.
+### Performce on oversampled datasets
+Below are the results of each oversampling technique:
+### Random Over-Sampling
+
 
 ## Conclusion
 This study provides insights into the effectiveness of various oversampling techniques in improving predictive model performance on imbalanced healthcare datasets. Recommendations for handling class imbalance in similar datasets will be provided.
