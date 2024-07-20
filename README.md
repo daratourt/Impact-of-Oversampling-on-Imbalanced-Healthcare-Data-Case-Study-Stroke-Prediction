@@ -87,6 +87,33 @@ The evaluations demonstrate that most models struggled to detect stroke cases in
 ### Performce on oversampled datasets
 Below are the results of each oversampling technique:
 #### Random Over-Sampling
+| Model                          | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-Score (0) | F1-Score (1) | ROC AUC Score |
+|--------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression            | 0.749    | 0.98          | 0.16          | 0.75       | 0.76       | 0.85         | 0.27         | 0.851         |
+| Random Forest                  | 0.938    | 0.94          | 0.40          | 1.00       | 0.03       | 0.97         | 0.06         | 0.814         |
+| Support Vector Machine         | 0.771    | 0.96          | 0.14          | 0.79       | 0.53       | 0.87         | 0.22         | 0.778         |
+| Gradient Boosting              | 0.793    | 0.97          | 0.18          | 0.80       | 0.66       | 0.88         | 0.28         | 0.815         |
+| AdaBoost                       | 0.740    | 0.98          | 0.16          | 0.74       | 0.77       | 0.84         | 0.27         | 0.839         |
+| k-Nearest Neighbors            | 0.868    | 0.95          | 0.18          | 0.90       | 0.32       | 0.93         | 0.23         | 0.649         |
+| Decision Tree                  | 0.911    | 0.94          | 0.16          | 0.96       | 0.11       | 0.95         | 0.13         | 0.538         |
+| Naive Bayes                    | 0.738    | 0.98          | 0.15          | 0.74       | 0.74       | 0.84         | 0.26         | 0.829         |
+| Linear Discriminant Analysis   | 0.735    | 0.98          | 0.16          | 0.73       | 0.76       | 0.84         | 0.26         | 0.850         |
+| Quadratic Discriminant Analysis| 0.750    | 0.98          | 0.16          | 0.75       | 0.74       | 0.85         | 0.26         | 0.831         |
+| Extra Trees                    | 0.937    | 0.94          | 0.33          | 1.00       | 0.03       | 0.97         | 0.06         | 0.758         |
+
+Logistic Regression shows improved recall for the minority class (stroke) after Random Over-Sampling. However, precision for the minority class remains low, indicating many false positives. The model correctly predicts 75% of non-stroke cases and 76% of stroke cases, resulting in an overall accuracy of 74.9%.
+
+Random Forest maintains high accuracy but struggles to recall the minority class (stroke). The ROC AUC score indicates that the model has some discriminatory power but fails to detect stroke cases effectively.
+
+Support Vector Machine shows moderate improvement in recall for the minority class (stroke) after Random Over-Sampling but still has low precision, indicating false positives. The overall accuracy is 77.1%. Gradient Boosting shows a balanced performance with improved recall for the minority class and a good ROC AUC score, indicating better discrimination between classes.
+
+AdaBoost improves recall for the minority class significantly but at the cost of precision, resulting in many false positives. The overall accuracy is 74.0%.k-Nearest Neighbors shows moderate improvement in recall for the minority class, but precision is still low, indicating many false positives. Decision Tree maintains high precision and recall for the majority class but struggles significantly with the minority class, resulting in low performance metrics for stroke prediction.
+
+Naive Bayes shows improved recall for the minority class with moderate precision. The overall accuracy is 73.8%. Linear Discriminant Analysis shows moderate improvement in recall for the minority class with low precision, resulting in many false positives. Quadratic Discriminant Analysis shows moderate improvement in recall for the minority class with low precision, resulting in many false positives. Extra Trees maintains high precision and recall for the majority class but struggles significantly with the minority class, resulting in low performance metrics for stroke prediction.
+
+Therefore, Random Over-Sampling generally improves recall for the minority class across most models, but precision remains low, indicating a high number of false positives. The ROC AUC score improves for most models, indicating better discrimination between classes. Models like Gradient Boosting and Logistic Regression show balanced improvements with Random Over-Sampling.
+
+#### SMOTE
 
 
 ## Conclusion
