@@ -231,20 +231,37 @@ QDA benefits from SVMSMOTE with high recall and moderate precision, resulting in
 Overall, applying SVMSMOTE generally improves the recall for most models for the minority class (stroke), meaning that the models are better at identifying stroke cases. However, precision often remains moderate, indicating a balanced number of false positives. Gradient Boosting, AdaBoost, and Logistic Regression provide a more balanced improvement in both recall and precision, making them potentially better choices for this particular problem. 
 
 #### SMOTEENN
-| Model                              | Accuracy | Precision (0) | Recall (0) | F1-score (0) | Precision (1) | Recall (1) | F1-score (1) | ROC AUC Score |
-|------------------------------------|----------|---------------|------------|--------------|---------------|------------|--------------|---------------|
-| Logistic Regression                | 0.708    | 0.98          | 0.70       | 0.82         | 0.15          | 0.79       | 0.25         | 0.848         |
-| Random Forest                      | 0.860    | 0.95          | 0.89       | 0.92         | 0.17          | 0.32       | 0.22         | 0.798         |
-| Support Vector Machine             | 0.747    | 0.97          | 0.76       | 0.85         | 0.14          | 0.61       | 0.23         | 0.771         |
-| Gradient Boosting                  | 0.822    | 0.97          | 0.84       | 0.90         | 0.19          | 0.58       | 0.28         | 0.824         |
-| AdaBoost                           | 0.786    | 0.98          | 0.79       | 0.87         | 0.18          | 0.74       | 0.30         | 0.838         |
-| k-Nearest Neighbors                | 0.764    | 0.96          | 0.78       | 0.86         | 0.14          | 0.55       | 0.22         | 0.714         |
-| Decision Tree                      | 0.841    | 0.96          | 0.87       | 0.91         | 0.17          | 0.40       | 0.23         | 0.636         |
-| Naive Bayes                        | 0.717    | 0.98          | 0.72       | 0.83         | 0.14          | 0.74       | 0.24         | 0.825         |
-| Linear Discriminant Analysis       | 0.698    | 0.99          | 0.69       | 0.81         | 0.15          | 0.84       | 0.25         | 0.847         |
-| Quadratic Discriminant Analysis    | 0.729    | 0.98          | 0.73       | 0.83         | 0.15          | 0.77       | 0.26         | 0.828         |
-| Extra Trees                        | 0.851    | 0.95          | 0.88       | 0.92         | 0.16          | 0.34       | 0.22         | 0.774         |
+| Model                              | Accuracy | Precision (0) | Precision (1) | Recall (0) | Recall (1) | F1-score (0) | F1-score (1) | ROC AUC Score |
+|------------------------------------|----------|---------------|---------------|------------|------------|--------------|--------------|---------------|
+| Logistic Regression                | 0.708    | 0.98          | 0.15          | 0.70       | 0.79       | 0.82         | 0.25         | 0.848         |
+| Random Forest                      | 0.860    | 0.95          | 0.17          | 0.89       | 0.32       | 0.92         | 0.22         | 0.798         |
+| Support Vector Machine             | 0.747    | 0.97          | 0.14          | 0.76       | 0.61       | 0.85         | 0.23         | 0.771         |
+| Gradient Boosting                  | 0.822    | 0.97          | 0.19          | 0.84       | 0.58       | 0.90         | 0.28         | 0.824         |
+| AdaBoost                           | 0.786    | 0.98          | 0.18          | 0.79       | 0.74       | 0.87         | 0.30         | 0.838         |
+| k-Nearest Neighbors                | 0.764    | 0.96          | 0.14          | 0.78       | 0.55       | 0.86         | 0.22         | 0.714         |
+| Decision Tree                      | 0.841    | 0.96          | 0.17          | 0.87       | 0.40       | 0.91         | 0.23         | 0.636         |
+| Naive Bayes                        | 0.717    | 0.98          | 0.14          | 0.72       | 0.74       | 0.83         | 0.24         | 0.825         |
+| Linear Discriminant Analysis       | 0.698    | 0.99          | 0.15          | 0.69       | 0.84       | 0.81         | 0.25         | 0.847         |
+| Quadratic Discriminant Analysis    | 0.729    | 0.98          | 0.15          | 0.73       | 0.77       | 0.83         | 0.26         | 0.828         |
+| Extra Trees                        | 0.851    | 0.95          | 0.16          | 0.88       | 0.34       | 0.92         | 0.22         | 0.774         |
 
+Logistic Regression after SMOTEENN showed improved recall for the minority class (stroke cases) at the expense of precision. This means it identified more true stroke cases but also had more false positives. The overall accuracy dropped, indicating a trade-off between identifying stroke cases and maintaining precision.
+
+Random Forest after SMOTEENN maintained high accuracy and improved recall for the minority class. It managed to identify more stroke cases while keeping false positives relatively low, making it a balanced model for both classes.
+
+Support Vector Machine after SMOTEENN improved recall for the minority class, identifying more stroke cases but with reduced precision. The overall accuracy was lower, indicating more false positives were introduced.
+
+Gradient Boosting after SMOTEENN achieved good recall and precision balance. It effectively identified stroke cases with moderate false positives, maintaining a good overall accuracy. AdaBoost after SMOTEENN improved recall significantly for the minority class, identifying more stroke cases with increased false positives. The overall accuracy decreased, indicating the model was more sensitive to stroke cases.
+
+k-Nearest Neighbors after SMOTEENN showed improved recall for the minority class but at the cost of precision. The overall accuracy dropped, reflecting a trade-off between identifying stroke cases and maintaining precision. Decision Tree after SMOTEENN maintained a good balance between recall and precision for both classes. It identified more stroke cases while keeping false positives at a moderate level, resulting in a good overall accuracy.
+
+Naive Bayes after SMOTEENN showed significant improvement in recall for the minority class. It identified more stroke cases but had increased false positives, reflecting a lower overall accuracy. Linear Discriminant Analysis after SMOTEENN had a significant increase in recall for the minority class. It identified more stroke cases but had more false positives, resulting in a lower overall accuracy.
+
+Linear Discriminant Analysis after SMOTEENN had a significant increase in recall for the minority class. It identified more stroke cases but had more false positives, resulting in a lower overall accuracy. Quadratic Discriminant Analysis after SMOTEENN showed improved recall for the minority class with an increased number of false positives. The overall accuracy decreased, indicating the model was more sensitive to stroke cases. 
+
+Extra Trees after SMOTEENN maintained high accuracy and showed moderate improvement in recall for the minority class. It identified more stroke cases with a balanced precision, making it a reliable model for predicting stroke cases.
+
+Overall, applying SMOTEENN has improved the recall for the minority class across various models, allowing them to identify more stroke cases. However, this improvement often comes at the cost of precision and overall accuracy, reflecting a trade-off between sensitivity to stroke cases and maintaining precision. Models like Random Forest and Gradient Boosting achieved a good balance, making them effective for both classes.
 
 #### SMOTETomek
 
