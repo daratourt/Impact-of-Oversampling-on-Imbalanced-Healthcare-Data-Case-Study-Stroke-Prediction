@@ -264,6 +264,33 @@ Extra Trees after SMOTEENN maintained high accuracy and showed moderate improvem
 Overall, applying SMOTEENN has improved the recall for the minority class across various models, allowing them to identify more stroke cases. However, this improvement often comes at the cost of precision and overall accuracy, reflecting a trade-off between sensitivity to stroke cases and maintaining precision. Models like Random Forest and Gradient Boosting achieved a good balance, making them effective for both classes.
 
 #### SMOTETomek
+| Model                        | Accuracy | Precision (0) | Recall (0) | F1-score (0) | Precision (1) | Recall (1) | F1-score (1) | ROC AUC Score |
+|------------------------------|----------|---------------|------------|--------------|---------------|------------|--------------|---------------|
+| Logistic Regression          | 0.757    | 0.98          | 0.76       | 0.85         | 0.17          | 0.74       | 0.27         | 0.849         |
+| Random Forest                | 0.916    | 0.94          | 0.97       | 0.96         | 0.17          | 0.10       | 0.12         | 0.796         |
+| Support Vector Machine       | 0.783    | 0.96          | 0.80       | 0.87         | 0.15          | 0.55       | 0.23         | 0.766         |
+| Gradient Boosting            | 0.863    | 0.96          | 0.89       | 0.92         | 0.19          | 0.37       | 0.25         | 0.821         |
+| AdaBoost                     | 0.832    | 0.97          | 0.84       | 0.90         | 0.21          | 0.63       | 0.31         | 0.818         |
+| k-Nearest Neighbors          | 0.820    | 0.96          | 0.85       | 0.90         | 0.15          | 0.42       | 0.22         | 0.678         |
+| Decision Tree                | 0.858    | 0.95          | 0.90       | 0.92         | 0.12          | 0.21       | 0.15         | 0.555         |
+| Naive Bayes                  | 0.726    | 0.98          | 0.72       | 0.83         | 0.15          | 0.76       | 0.25         | 0.831         |
+| Linear Discriminant Analysis | 0.741    | 0.98          | 0.74       | 0.84         | 0.16          | 0.74       | 0.26         | 0.847         |
+| Quadratic Discriminant Analysis | 0.744 | 0.98          | 0.74       | 0.84         | 0.17          | 0.82       | 0.28         | 0.839         |
+| Extra Trees                  | 0.913    | 0.94          | 0.97       | 0.95         | 0.15          | 0.10       | 0.12         | 0.776         |
+
+Logistic Regression after SMOTETomek showed improved recall for the minority class (stroke cases) but had low precision, indicating a higher number of false positives. The overall accuracy is moderate, reflecting a balance between identifying stroke cases and maintaining precision. 
+
+Random Forest after SMOTETomek maintained high accuracy and recall for the majority class but struggled with the minority class, showing low recall and precision for stroke cases. SVM after SMOTETomek showed improved recall for the minority class but at the cost of precision, leading to a moderate number of false positives.
+
+Gradient Boosting achieved a good balance between recall and precision for both classes, making it effective at identifying stroke cases with a reasonable number of false positives. AdaBoost showed significant improvement in recall for the minority class, effectively identifying stroke cases with a moderate number of false positives.
+
+k-NN showed improved recall for the minority class but at the cost of precision, leading to more false positives and a moderate overall accuracy. Decision Tree maintained high accuracy and recall for the majority class but struggled with the minority class, showing low recall and precision for stroke cases.
+
+Naive Bayes showed significant improvement in recall for the minority class, effectively identifying stroke cases but at the cost of precision, leading to a moderate number of false positives. LDA showed balanced recall for both classes, making it effective at identifying both positives and negatives.
+
+LDA showed balanced recall for both classes, making it effective at identifying both positives and negatives. Extra Trees model maintained high accuracy and recall for the majority class but struggled with recall for the minority class, similar to the random forest model.
+
+Overall, applying SMOTETomek improved recall for the minority class across various models, allowing them to identify more stroke cases. However, this improvement often comes at the cost of precision and overall accuracy, reflecting a trade-off between sensitivity to stroke cases and maintaining precision. Models like Gradient Boosting and AdaBoost achieved a good balance, making them effective for both classes.
 
 ## Conclusion
 This study provides insights into the effectiveness of various oversampling techniques in improving predictive model performance on imbalanced healthcare datasets. Recommendations for handling class imbalance in similar datasets will be provided.
